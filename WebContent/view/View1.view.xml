@@ -1,9 +1,17 @@
-<mvc:View controllerName="Ztest.Ztest.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<mvc:View controllerName="Ztest.Ztest.controller.View1" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
 	<Shell id="shell">
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
-					<content></content>
+					<content>
+					<ComboBox id="cmboxCategories"
+				items="{
+					path: '/Categories',
+					sorter: { path: 'text' }
+				}">
+				<core:Item key="{IdCategory}" text="{CategoryName}" />
+			</ComboBox>
+					</content>
 				</Page>
 			</pages>
 		</App>
