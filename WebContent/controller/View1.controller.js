@@ -7,6 +7,11 @@ sap.ui.define([
 		onInit: function () {
 			this.PurchaseOrders();
 		},
+		navTOPage2 : function(){
+			alert('btn2 click!');
+			var oRouter= sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("View2");
+		},
 		getServiceUrl : function() {
 			var sUrl;
 			var sPath

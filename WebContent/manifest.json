@@ -76,17 +76,31 @@
 				"clearControlAggregation": false
 			},
 			"routes": [{
-				"name": "RouteView1",
-				"pattern": "RouteView1",
-				"target": ["TargetView1"]
+				"name": "View1",
+				"pattern": "View1",
+				"target": ["View1"]
+			},
+			{
+				"name": "View2",
+				"pattern": "View2",
+				"target": ["View2"]
 			}],
 			"targets": {
-				"TargetView1": {
+				"View1": {
 					"viewType": "XML",
 					"transition": "slide",
 					"clearControlAggregation": false,
-					"viewId": "View1",
-					"viewName": "View1"
+					"viewId": "View11",
+					"viewName": "View1",
+					"ViewLevel":1
+				},
+				"View2": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "View22",
+					"viewName": "View2",
+					"ViewLevel":2
 				}
 			}
 		}

@@ -11,6 +11,7 @@
 				}">
 				<core:Item key="{IdCategory}" text="{CategoryName}" />
 			</ComboBox>
+				<Button type="Reject" text="{i18n>nav2}"  id="btnin" press="navTOPage2"/>
 					</content>
 				</Page>
 			</pages>
