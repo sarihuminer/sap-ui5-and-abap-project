@@ -1,4 +1,4 @@
-<core:FragmentDefinition
+<core:FragmentDefinition controllerName="Ztest.Ztest.controller.View2"
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
 	xmlns:f="sap.ui.layout.form"
@@ -35,25 +35,28 @@
 				<l:VerticalLayout class="sapUiContentPadding" width="100%">
 					<Label text="new order prodct" />
 				<Input
+				id="productName"
 			value=""
 			description="product name"
 			width="200px"
 			fieldWidth="60px"
 			class="sapUiSmallMarginBottom" />
 					<Input
+			id= "amount"		
 			value=""
 			description="amount"
 			width="200px"
 			fieldWidth="60px"
 			class="sapUiSmallMarginBottom" />
 					<Input
-			value=""
+			id="price"
+			value="20"
 			description="price"
 			width="200px"
 			fieldWidth="60px"
 			class="sapUiSmallMarginBottom" />
 					</l:VerticalLayout>
-
+<Button type="Reject" text="{i18n>nav2}"  id="btnin" press="create_newOrder"/>
 
 
 
