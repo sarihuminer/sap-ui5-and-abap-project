@@ -1,10 +1,13 @@
-<mvc:View controllerName="Ztest.Ztest.controller.View2" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<mvc:View controllerName="Ztest.Ztest.controller.View2" 
+xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" 
+displayBlock="true" xmlns="sap.m"
+>
 	<Shell id="shell">
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
 					<content>
-				
+							<core:Fragment fragmentName="Ztest.Ztest.view.Form2" type="XML"/>
 					</content>
 				</Page>
 			</pages>

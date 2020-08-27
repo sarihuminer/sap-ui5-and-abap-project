@@ -1,4 +1,4 @@
-<core:FragmentDefinition controllerName="Ztest.Ztest.controller.View2"
+<core:FragmentDefinition 
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
 	xmlns:f="sap.ui.layout.form"
