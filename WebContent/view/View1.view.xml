@@ -12,6 +12,7 @@
 				<core:Item key="{IdCategory}" text="{CategoryName}" />
 			</ComboBox>
 				<Button type="Reject" text="{i18n>nav2}"  id="btnin" press="navTOPage2"/>
+				<Button type="Reject" text="{i18n>allOrders}"  id="allOrders" press="show_all_order"/>
 					</content>
 				</Page>
 			</pages>

@@ -12,6 +12,11 @@ sap.ui.define([
 			var oRouter= sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("View2");
 		},
+		show_all_order: function(){
+			alert('btn3 click!');
+			var oRouter= sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("View3");
+		},
 		getServiceUrl : function() {
 			var sUrl;
 			var sPath

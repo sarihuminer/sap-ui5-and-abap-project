@@ -83,8 +83,16 @@
 			{
 				"name": "View2",
 				"pattern": "View2",
-				"target": ["View2"]
-			}],
+				"target": ["View2"]},
+				{
+				"name": "View3",
+				"pattern": "View3",
+				"target": ["View3"]},
+				{
+				"name": "View4",
+				"pattern": "View4",
+				"target": ["View4"]}
+				],
 			"targets": {
 				"View1": {
 					"viewType": "XML",
@@ -92,7 +100,7 @@
 					"clearControlAggregation": false,
 					"viewId": "View11",
 					"viewName": "View1",
-					"ViewLevel":1
+					"viewLevel": 1
 				},
 				"View2": {
 					"viewType": "XML",
@@ -100,7 +108,23 @@
 					"clearControlAggregation": false,
 					"viewId": "View22",
 					"viewName": "View2",
-					"ViewLevel":2
+					"viewLevel": 2
+				},
+				"View3": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "View33",
+					"viewName": "View3",
+					"viewLevel": 3
+				},
+				"View4": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewId": "View44",
+					"viewName": "View4",
+					"viewLevel": 4
 				}
 			}
 		}

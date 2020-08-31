@@ -1,0 +1,56 @@
+<mvc:View controllerName="Ztest.Ztest.controller.View4" 
+xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" 
+displayBlock="true" xmlns="sap.m"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+							<Table id="idMTable2" noDataText="{i18n>NoData}"
+								items="{/EtzekpoSet}">
+								<items>
+									<ColumnListItem counter="0" type="Active" press="onPress">
+										<cells>
+											<Text text="{Ebeln}" maxLines="0"   ></Text>
+											<Text text="{Ebelp}" maxLines="0"></Text>
+											<Text text="{Name}" maxLines="0"></Text>
+											<Text text="{Amount}" maxLines="0"></Text>
+											<Text text="{Price}" maxLines="0"></Text>
+										</cells>
+									</ColumnListItem>
+								</items>
+								<columns>
+									<Column hAlign="Right"    >
+										<header >
+											<Text text="{i18n>Ebeln}" textAlign="Right" maxLines="0"></Text>
+										</header>
+									</Column >
+									<Column hAlign="Right" >
+										<header>
+											<Text text="{i18n>Ebelp}" textAlign="Right" maxLines="0" ></Text>
+										</header>
+									</Column>	
+									<Column hAlign="Right" >
+										<header>
+											<Text text="{i18n>Name}" textAlign="Right" maxLines="0"></Text>
+										</header>
+									</Column>		
+									<Column hAlign="Right" >
+										<header>
+											<Text text="{i18n>Amount}" textAlign="Right" maxLines="0"></Text>
+										</header>
+									</Column>	
+									<Column hAlign="Right" >
+										<header>
+											<Text text="{i18n>Price}" textAlign="Right" maxLines="0"></Text>
+										</header>
+									</Column>		
+								</columns>
+							</Table>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
