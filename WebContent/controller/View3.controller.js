@@ -28,6 +28,10 @@ sap.ui.define([
 				 },
 				 });
 		},
+		back : function(){
+			var oRouter= sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("View2",true);
+		},
 		getServiceUrl : function() {
 
 			var sUrl;
@@ -38,12 +42,9 @@ sap.ui.define([
 			onPress: function (oEvent) {
 				var ebeln = oEvent.oSource.mAggregations.cells[0].mProperties.text;
 				var oItem = oEvent.getSource();
-				alert(oItem);
 				var oRouter= sap.ui.core.UIComponent.getRouterFor(this);
-				oRouter.navTo("View4");
 				window.globalVariable=ebeln;
-					
-			
+				oRouter.navTo("View4");	
 				},
 				
 			

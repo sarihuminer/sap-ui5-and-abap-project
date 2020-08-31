@@ -37,7 +37,7 @@ displayBlock="true" xmlns="sap.m"
 									</Column>			
 								</columns>
 							</Table>
-			
+			<Button text="{i18n>btn2}" press="back" ></Button>
 					</content>
 				</Page>
 			</pages>

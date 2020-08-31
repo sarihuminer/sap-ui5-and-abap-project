@@ -97,7 +97,7 @@
 				"View1": {
 					"viewType": "XML",
 					"transition": "slide",
-					"clearControlAggregation": false,
+					"clearControlAggregation": true,
 					"viewId": "View11",
 					"viewName": "View1",
 					"viewLevel": 1
@@ -105,7 +105,7 @@
 				"View2": {
 					"viewType": "XML",
 					"transition": "slide",
-					"clearControlAggregation": false,
+					"clearControlAggregation": true,
 					"viewId": "View22",
 					"viewName": "View2",
 					"viewLevel": 2
@@ -113,7 +113,7 @@
 				"View3": {
 					"viewType": "XML",
 					"transition": "slide",
-					"clearControlAggregation": false,
+					"clearControlAggregation": true,
 					"viewId": "View33",
 					"viewName": "View3",
 					"viewLevel": 3
@@ -121,7 +121,7 @@
 				"View4": {
 					"viewType": "XML",
 					"transition": "slide",
-					"clearControlAggregation": false,
+					"clearControlAggregation": true,
 					"viewId": "View44",
 					"viewName": "View4",
 					"viewLevel": 4

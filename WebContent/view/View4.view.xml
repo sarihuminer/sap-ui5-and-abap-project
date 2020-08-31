@@ -48,6 +48,7 @@ displayBlock="true" xmlns="sap.m"
 									</Column>		
 								</columns>
 							</Table>
+					<Button text="{i18n>btn2}" press="onPress" ></Button>
 					</content>
 				</Page>
 			</pages>

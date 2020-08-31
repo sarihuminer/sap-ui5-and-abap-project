@@ -8,6 +8,7 @@ displayBlock="true" xmlns="sap.m"
 				<Page id="page" title="{i18n>title}">
 					<content>
 							<core:Fragment fragmentName="Ztest.Ztest.view.Form2" type="XML"/>
+					<Button text="{i18n>btn2}" press="onPress" ></Button>
 					</content>
 				</Page>
 			</pages>

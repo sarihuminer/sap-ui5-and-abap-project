@@ -13,6 +13,7 @@
 			</ComboBox>
 				<Button type="Reject" text="{i18n>nav2}"  id="btnin" press="navTOPage2"/>
 				<Button type="Reject" text="{i18n>allOrders}"  id="allOrders" press="show_all_order"/>
+					<Button text="{i18n>btn2}" press="onPress" ></Button>
 					</content>
 				</Page>
 			</pages>

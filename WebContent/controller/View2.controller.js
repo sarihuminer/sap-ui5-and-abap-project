@@ -10,6 +10,10 @@ sap.ui.define([
 			this._showFormFragment("Form2");
 		//	this.create_newOrder();
 		},
+		onPress : function(){
+			var oRouter= sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("View1",true);
+		},
 		_formFragments: {},
 		_showFormFragment : function (sFragmentName) {
 		//	var oPage = this.byId("page");
