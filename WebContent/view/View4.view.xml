@@ -7,16 +7,19 @@ displayBlock="true" xmlns="sap.m"
 			<pages>
 				<Page id="page" title="{i18n>title}">
 					<content>
+							<Button text="{i18n>btn2}" press="onPress" ></Button>
 							<Table id="idMTable2" noDataText="{i18n>NoData}"
 								items="{/EtzekpoSet}">
 								<items>
-									<ColumnListItem counter="0" type="Active" press="onPress">
+									<ColumnListItem counter="0" type="Active"  >
 										<cells>
 											<Text text="{Ebeln}" maxLines="0"   ></Text>
 											<Text text="{Ebelp}" maxLines="0"></Text>
 											<Text text="{Name}" maxLines="0"></Text>
 											<Text text="{Amount}" maxLines="0"></Text>
 											<Text text="{Price}" maxLines="0"></Text>
+											<Button icon="sap-icon://delete" press="delete_row()"/>
+											<Button icon="sap-icon://edit" press="edit_row()"/>
 										</cells>
 									</ColumnListItem>
 								</items>
@@ -45,10 +48,20 @@ displayBlock="true" xmlns="sap.m"
 										<header>
 											<Text text="{i18n>Price}" textAlign="Right" maxLines="0"></Text>
 										</header>
-									</Column>		
+									</Column>	
+									<Column hAlign="Right" class="icons">
+										<header>
+											<Text text="" textAlign="Right" maxLines="0"></Text>
+										</header>
+									</Column>
+									<Column hAlign="Right" class="icons" >
+										<header>
+											<Text text="" textAlign="left" maxLines="0"></Text>
+										</header>
+									</Column>				
 								</columns>
 							</Table>
-					<Button text="{i18n>btn2}" press="onPress" ></Button>
+					
 					</content>
 				</Page>
 			</pages>

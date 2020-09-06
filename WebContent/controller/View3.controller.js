@@ -7,7 +7,7 @@ sap.ui.define([
 	return Controller.extend("Ztest.Ztest.controller.View3", {
 		onInit: function () {
 		
-			var that = this;
+			 var that = this;
 			 var sServiceUrl   = this.getServiceUrl();
 			 var oModel        = new sap.ui.model.odata.ODataModel(sServiceUrl, true);
 			 var oFilter = [];

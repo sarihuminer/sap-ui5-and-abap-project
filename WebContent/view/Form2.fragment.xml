@@ -40,6 +40,7 @@
 			description="product name"
 			width="200px"
 			fieldWidth="60px"
+				
 			class="sapUiSmallMarginBottom" />
 					<Input
 			id= "amount"		

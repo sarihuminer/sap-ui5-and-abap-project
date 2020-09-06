@@ -11,9 +11,10 @@ sap.ui.define([
 	return Controller.extend("Ztest.Ztest.controller.View2", {
 		onInit: function () {
 			// Set the initial form to be the display one
+			this._showFormFragment("Form2");
 			this._oMultiInput = this.getView().byId("multiInput");
 			this._oMultiInput.setTokens(this._getDefaultTokens());
-			this.orders=[]	;
+
 			this.oColModel =  new JSONModel({
 				"cols": [
 				 		{
@@ -38,14 +39,6 @@ sap.ui.define([
 );
 			
 		},
-		onBeforeRendering: function(){
-			var ebelnText= this.getView().byId("ebeln");
-			ebelnText.setText(window.data.Ebeln.getValue());
-			
-			},
-		onAfterRendering: function(){
-			
-			},	
 		onPress : function(){
 			var oRouter= sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("View1",true);
@@ -86,6 +79,7 @@ sap.ui.define([
 				var Pname = this.getView().byId("productName")._lastValue;
 				var amount = this.getView().byId("amount")._lastValue;
 				var price = this.getView().byId("price")._lastValue;
+				console.log("prod name " +Pname+" amount "+amount+" price "+price);
 				
 
 				var oEntry = {
@@ -101,25 +95,24 @@ sap.ui.define([
 					  console.log("succses!");
 					  }, 
 					  error: function(oError) { 
-						  console.log("erorr !!!!!!  :( "); }
+console.log("erorr !!!!!!  :( "); }
 					});
 			
 				},
 				
 				onValueHelpRequested: function() {
-					var orders=this.getItems();
 					var aCols = this.oColModel.getData().cols;
 					console.log(aCols);
 					this._oValueHelpDialog = sap.ui.xmlfragment("Ztest.Ztest.view.ValueHelpDialogBasic", this);
 					this.getView().addDependent(this._oValueHelpDialog);
 					var oJModel = new sap.ui.model.json.JSONModel();
-					oJModel = orders;
+					oJModel = this.getItems();
 					console.log(oJModel);
 					
 					
 					this._oValueHelpDialog.getTableAsync().then(function (oTable) {
 						
-						oTable.setModel(this.oJModel,"Items");
+						oTable.setModel(this.oJModel,"items");
 						oTable.setModel(this.oColModel, "columns");
 
 						if (oTable.bindRows) {
@@ -147,11 +140,10 @@ sap.ui.define([
 					var oModel = new
 					sap.ui.model.odata.ODataModel(sServiceUrl,true);
 					var oFilter = [];
-					 var dataOrders=[];
+	
 					oFilter.push(new sap.ui.model.Filter("IvCategory", sap.ui.model.FilterOperator.EQ, '1'));
 					oModel.read("/EtItemsSet", {filters: oFilter ,
 						 success: function(data) {
-							 dataOrders=data.results;
 							 console.log(data.results);
 							 var oJModel = new sap.ui.model.json.JSONModel();
 
@@ -160,7 +152,7 @@ sap.ui.define([
 						console.log('success');
 						//var input=that.getView().byId("cmboxItems");
 						//input.setModel(oJModel);
-						    return dataOrders;
+						 return oJModel;
 						 },
 						 error : function(event) {
 						 console.log('error');
