@@ -1,18 +1,20 @@
 <mvc:View controllerName="Ztest.Ztest.controller.View2" 
-xmlns:core="sap.ui.core" 
-xmlns:mvc="sap.ui.core.mvc" 
+
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:layout="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
 displayBlock="true" 
-xmlns="sap.m"
-xmlns:layout="sap.ui.layout"
-xmlns:template="sap.ui.template"
-xmlns:form="sap.ui.layout.form">
+xmlns:template="sap.ui.template">
+
 	<Shell id="shell">
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
 					<content>
 					<Button text="{i18n>btn2}" press="onPress" ></Button>
-				<form:SimpleForm title="Purchase Order" editable="true">
+				<form:SimpleForm title="Purchase Order" editable="true" class="font">
 	
 					<layout:Grid defaultSpan="L12 M12 S12">
 						<layout:content>
@@ -27,6 +29,7 @@ xmlns:form="sap.ui.layout.form">
 										valueHelpRequest=".onValueHelpRequested"	
 									>
 									</MultiInput>
+									
 										<Input value="{path:'/number', type:'sap.ui.model.type.Currency'}"/>
 								</form:content>
 							</form:SimpleForm>

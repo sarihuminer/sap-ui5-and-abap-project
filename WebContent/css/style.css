@@ -4,3 +4,9 @@
 	width:50px;
 	back-ground-color:"red";
 }
+.sapUiForm .sapUiFormTitle .font{
+	color:green;
+}
+.sapUiForm .sapUiFormTitle{
+	color:yellow;
+}

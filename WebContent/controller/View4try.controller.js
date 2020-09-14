@@ -10,20 +10,14 @@ sap.ui.define([
 
 	return Controller.extend("Ztest.Ztest.controller.View2", {
 		onInit: function () {
-			 var that = this;
 			// Set the initial form to be the display one
-				this._oMultiInput = this.getView().byId("multiInput");
-				this._oMultiInput.setTokens(this._getDefaultTokens());
-				//
-				//that.orders = this.getItems()	;
-			 	//this.oColModel = new JSONModel(sap.ui.require.toUrl("sap/ui/comp/sample/valuehelpdialog/basic") + "/columnsModel.json");
-				this.oProductsModel =that.getItems();				
-			 
-			
+			this._oMultiInput = this.getView().byId("multiInput");
+			this._oMultiInput.setTokens(this._getDefaultTokens());
+			this.orders=[]	;
 			this.oColModel =  new JSONModel({
 				"cols": [
 				 		{
-				 			"label": "ItemId",
+				 			"label": "ProductId",
 				 			"template": "ItemId",
 				 			"width": "5rem"
 				 		},
@@ -112,10 +106,9 @@ sap.ui.define([
 			
 				},
 				
-		/*	onValueHelpRequested: function() {
-					var orders=this.orders;
-					console.log("on value");
-					console.log(orders);
+				onValueHelpRequested: function() {
+					var orders=this.getItems();
+					
 						
 						var aCols = this.oColModel.getData().cols;
 						console.log(aCols);
@@ -151,57 +144,28 @@ sap.ui.define([
 						
 				
 					
-				},*/
-				
-				onValueHelpRequested: function() {
-					var aCols = this.oColModel.getData().cols;
-
-					this._oValueHelpDialog = sap.ui.xmlfragment("Ztest.Ztest.view.ValueHelpDialogBasic", this);
-					this.getView().addDependent(this._oValueHelpDialog);
-
-					this._oValueHelpDialog.getTableAsync().then(function (oTable) {
-						//console.log(this.oProductsModel);	
-//						oTable.setModel(this.oProductsModel);
-						oTable.setModel(this.oColModel, "columns");
-
-						if (oTable.bindRows) {
-							oTable.bindAggregation("rows", "/theMod");
-						}
-
-						if (oTable.bindItems) {
-							oTable.bindAggregation("items", "/theMod", function () {
-								return new ColumnListItem({
-									cells: aCols.map(function (column) {
-										return new Label({ text: "{" + column.template + "}" });
-									})
-								});
-							});
-						}
-						this._oValueHelpDialog.update();
-					}.bind(this));
-
-					this._oValueHelpDialog.setTokens(this._oMultiInput.getTokens());
-					this._oValueHelpDialog.open();
 				},
-				
-				
 				getItems: function(){
 					var that = this;
 					var sServiceUrl = this.getServiceUrl();
 					var oModel = new
 					sap.ui.model.odata.ODataModel(sServiceUrl,true);
 					var oFilter = [];
+					 var dataOrders=[];
 					oFilter.push(new sap.ui.model.Filter("IvCategory", sap.ui.model.FilterOperator.EQ, '1'));
 					oModel.read("/EtItemsSet", {filters: oFilter ,
 						 success: function(data) {
-							 var oJModel = new
-							 sap.ui.model.json.JSONModel();
+							 dataOrders=data.results;
+							 console.log(data.results);
+							 var oJModel = new sap.ui.model.json.JSONModel();
 
-							 oJModel.setData({ProdItems: data.results});
-							console.log(data.results);
-							console.log('success');
-							that.getOwnerComponent().setModel(new sap.ui.model.json.JSONModel(data.results), "theMod")                                                                                      
-							return oJModel;
+							 oJModel.setData({Items: data.results});
+							
+						console.log('success');
+						//var input=that.getView().byId("cmboxItems");
+						//input.setModel(oJModel);
+						
+						    return dataOrders;
 						 },
 						 error : function(event) {
 						 console.log('error');
@@ -214,7 +178,6 @@ sap.ui.define([
 					this._oMultiInput.setTokens(aTokens);
 					this._oValueHelpDialog.close();
 				},
-				
 
 				onValueHelpCancelPress: function () {
 				
@@ -240,9 +203,3 @@ sap.ui.define([
 			
 	});
 });
-
-
-
-
-
-
